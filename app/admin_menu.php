@@ -14,12 +14,12 @@ class admin_menu extends Model
 
     public function parent()
     {
-        return $this->belongsTo('App\admin_menu', 'parent_id')->orderBy('title');
+        return $this->belongsTo('App\admin_menu', 'parent_id')->where('status',1);
     }
 
     public function children()
     {
-        return $this->hasMany('App\admin_menu', 'parent_id')->orderBy('title');
+        return $this->hasMany('App\admin_menu', 'parent_id')->where('status',1);
     }
     public static function tree() {
 

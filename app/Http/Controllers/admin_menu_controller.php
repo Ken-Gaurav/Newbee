@@ -105,7 +105,7 @@ class admin_menu_controller extends Controller
         //print_r($request->get("menu_status",''));die;
 
         
-        return redirect('Menu');
+        return  redirect()->back();
     }
 
 

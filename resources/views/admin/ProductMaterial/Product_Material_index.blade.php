@@ -253,7 +253,7 @@
             }, 
             aoColumns: [
                 { data: 'product_material_id', name: 'product_material_id', orderable: false, searchable: false},
-                { data: 'mname', name: 'mname' },
+                { data: 'material_name', name: 'material_name' },
                 { data: 'thickness', name: 'thickness'},
                 { data: 'gsm', name: 'gsm'},
                 { data: 'status', name: 'status'},

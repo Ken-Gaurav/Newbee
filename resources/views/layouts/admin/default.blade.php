@@ -1,5 +1,5 @@
 <div  class="animated fadeInDown" >
-@if($role_permission)
+@if(isset($role_permission))
 
 
 @include('layouts.admin.header')
