@@ -55,14 +55,14 @@
                                                 </div>
                                                  @foreach($submenu1->children as $submenu2)
                                                 <ol class="dd-list" style="">
-                                                    <li class="dd-item" data-id="2">
+                                                    <li class="dd-item level1" data-id="2">
                                                         <div class="dd-handle">
                                                             <span class="pull-right">Level 2 </span>
                                                             <span class="label label-info"><i class="fa fa-cog"></i></span> {{ $submenu2->title }}
                                                         </div>
                                                         @foreach($submenu2->children as $submenu3)
                                                          <ol class="dd-list" style="">
-                                                            <li class="dd-item" data-id="2">
+                                                            <li class="dd-item level2" data-id="2">
                                                                 <div class="dd-handle">
                                                                     <span class="pull-right"> Level 3</span>
                                                                     <span class="label label-info"><i class="fa fa-cog"></i></span> {{ $submenu3->title }}

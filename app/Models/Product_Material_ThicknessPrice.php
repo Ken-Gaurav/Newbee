@@ -3,11 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class Product_Material_ThicknessPrice extends Model
 {
+    use SoftDeletes;
     protected $table = 'product_material_thickness_price';
     protected $primaryKey = 'product_material_thickness_id';
+    protected $dates = ['deleted_at'];
     /**
      * The attributes that are mass assignable.
      *

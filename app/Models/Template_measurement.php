@@ -35,5 +35,13 @@ class Template_measurement extends Model
                         
 
         ]);
-    }    
+    }   
+
+     public function volume()
+    {
+        return $this->hasMany('App\Models\Product_volume','primary_measurement_id','product_id');
+
+    }
+
+   
 }

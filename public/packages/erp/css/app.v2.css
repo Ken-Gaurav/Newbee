@@ -3,7 +3,8 @@ body{font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #fff;
   font-size: 13px;
   color: #676a6c;
-  overflow-x: hidden;}
+  overflow-x: hidden;
+ }
 
 nav.navbar-default ul li a i {
     margin-right: 6px;
@@ -40,7 +41,7 @@ nav.vertical li:hover > a{
 /* INNER UL HIDE */
 nav.navbar-default ul ul{
   position:absolute;
-  left:70%;
+  left:100%;
   top:0;
   width:100%;
   visibility:hidden;

@@ -10,6 +10,7 @@
         "laravelcollective/html": "5.2.0",
         "yajra/laravel-datatables-oracle": "^6.3",
         "lavary/laravel-menu": "dev-master",
+		"dingo/api": "2.0.0-alpha1",
         "lynx39/lara-pdf-merger": "dev-master"        
     },
     "require-dev": {

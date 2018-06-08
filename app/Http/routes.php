@@ -2,9 +2,7 @@
 
 
 	
-Route::get('/', function () {
-    return view('auth/login');
-});
+
 
 //Route::get('/','Auth\AuthController@LoginForm');
 
@@ -17,6 +15,9 @@ Route::get('myform1/ajax/{id}',array('as'=>'menuadd.ajax','uses'=>'admin_menu_co
 //Route::get('menuadd','admin_menu_controller@view');
 //Route::post('create','admin_menu_controller@insert');
 Route::get('show','admin_menu_controller@view_show');
+//Route::get('/','AuthController@LoginForm');
+
+
 Route::get('accessdeny','admin_menu_controller@AccessDenied');
 
 
@@ -39,6 +40,18 @@ Route::group( ['prefix'=>'', 'as' => ''],function () {
 // Route::get('edit','admin_menu_controller@getAnydata');
 
 Route::auth();
+
+// On url change to login and user is authorised automatic redirect to dashboard
+ Route::group(['middleware' => 'usersession'], function () {
+        Route::get('/', function ()    {
+            // Uses User Session Middleware
+        });
+        Route::get('/', function () {
+    return view('auth/login');
+});
+    });
+ //------------------
+
 
 Route::get('/home', 'HomeController@index');
 Route::get('/dashboard', 'HomeController@dash');
@@ -100,7 +113,11 @@ Route::get('/Multilogin','MultiLoginController@Multilogin');
  		
  	 });
  
+ Route::group(['namespace' => 'Admin\Product','middleware' => ['auth']], function () {
 
+ 	Route::controller('zipper','Zipper_Controller');
+
+ });
  Route::group(['namespace'=>'Admin\Setting'], function () {
  		Route::controller('currency','Currency_Controller');
  		Route::controller('country','Country_Controller');
@@ -120,7 +137,7 @@ Route::get('/Multilogin','MultiLoginController@Multilogin');
 Route::group(['namespace' => 'Admin\Product'], function () {
 	 	
  		Route::controller('product','product_controller');
- 		Route::controller('productoption','ProductOptionController');
+ 		Route::controller('product_volume','Product_volume_Controller'); 		
 		Route::controller('colorcategory','ColorcategoryController');
 		Route::controller('Ink_master','Ink_master_Controller');
 		Route::controller('Ink_solvent','Ink_solventController');

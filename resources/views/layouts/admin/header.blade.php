@@ -163,12 +163,28 @@
 
     <script>
         var csrfToken = '{!! csrf_token() !!}';
+    
     </script>
     @yield('header_scripts')
 </head>
-
-
-<body class="md-skin">
+<style>
+[data-letters]:before {
+  content:attr(data-letters);
+  display:inline-block;
+  font-size:1em;
+  width:2.5em;
+  height:2.5em;
+  line-height:2.5em;
+  text-align:center;
+  border-radius:50%;
+  background:burlywood;
+  vertical-align:middle;
+  margin-right:1em;
+  color:white;
+  }
+</style>
+ 
+<body class="md-skin"  >
 
 <div id="wrapper">
     <nav class="navbar-default navbar-static-side" role="navigation">
@@ -176,12 +192,18 @@
     <div class="sidebar-collapse">
 
                 <ul class="navbar-default">
-                <li class="nav-header">
-                    <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><h2 align="center" style="color:white;">ERP</h2></strong>
-                             </span> <span align="center" class="text-muted text-xs block">Welcome {{strtoupper($role_permission->name)}}</span> </span>
-              
-                <hr/>
+                    <li class="nav-header">
+                    <div class="dropdown profile-element"> <span>
+                           <span class="clear"> <span class="block m-t-xs" data-letters="{{ substr(strtoupper($role_permission->name), 0, 1)}}"> <strong class="font-bold" style="font-family: cursive;">{{strtoupper($role_permission->name)}}</strong></span>
+
+                             </span>
+                    
+                    </div>
+                   
                 </li>
+                
+              
+               
 
                 <li>
 
