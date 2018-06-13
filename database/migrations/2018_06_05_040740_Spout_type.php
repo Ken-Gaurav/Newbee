@@ -12,10 +12,10 @@ class SpoutType extends Migration
      */
      public function up()
     {
-        Schema::create('valve',function(Blueprint $table){
-            $table->increments('valve_id');
-            $table->String('valve_name');
-            $table->String('valve_abbrevation');
+        Schema::create('spout',function(Blueprint $table){
+            $table->increments('spout_id');
+            $table->String('spout_name');
+            $table->String('spout_abbrevation');
             $table->tinyInteger('status');
             $table->softDeletes();
             $table->timestamps();
@@ -29,6 +29,6 @@ class SpoutType extends Migration
      */
     public function down()
     {
-        Schema::drop('valve');
+        Schema::drop('spout');
     }
 }
